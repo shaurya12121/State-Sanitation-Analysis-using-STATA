@@ -1,0 +1,783 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/alihusain/Desktop/Econometrics/StataProject.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}12 Jun 2020, 16:26:03
+
+{com}. use "/Users/alihusain/Desktop/Combined 71 and 75 UP (2).dta"
+
+. do "/var/folders/0l/gy7jhs2s4mn0dw0ftr55h62w0000gn/T//SD10251.000000"
+{txt}
+{com}. 
+. 
+. gen y= HH_size^2
+{txt}
+{com}. 
+. 
+. 
+. foreach i in Social_Group Rel_Recoded Sector MDW_recoded {c -(}
+{txt}  2{com}. tab Latrine_Rec `i' if Year==1,  col nof chi2 
+{txt}  3{com}. tab Latrine_Rec `i' if Year==2,  col nof chi2 
+{txt}  4{com}. {c )-}
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}                Social group
+            latrine)) {c |}        ST         SC        OBC     Others {c |}     Total
+{hline 22}{c +}{hline 44}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     41.12      33.49      51.44      75.74 {txt}{c |}{res}     53.64 
+{txt}           No Latrine {c |}{res}     58.88      66.51      48.56      24.26 {txt}{c |}{res}     46.36 
+{txt}{hline 22}{c +}{hline 44}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}3{txt}) = {res}701.5183  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}                Social group
+            latrine)) {c |}        ST         SC        OBC     Others {c |}     Total
+{hline 22}{c +}{hline 44}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     45.65      43.10      64.05      87.31 {txt}{c |}{res}     65.61 
+{txt}           No Latrine {c |}{res}     54.35      56.90      35.95      12.69 {txt}{c |}{res}     34.39 
+{txt}{hline 22}{c +}{hline 44}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}3{txt}) = {res} 1.1e+03  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}  RECODE of Religion (Religion)
+            latrine)) {c |}     Hindu      Islam     Others {c |}     Total
+{hline 22}{c +}{hline 33}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     48.80      71.18      92.86 {txt}{c |}{res}     53.64 
+{txt}           No Latrine {c |}{res}     51.20      28.82       7.14 {txt}{c |}{res}     46.36 
+{txt}{hline 22}{c +}{hline 33}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}286.7020  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}  RECODE of Religion (Religion)
+            latrine)) {c |}     Hindu      Islam     Others {c |}     Total
+{hline 22}{c +}{hline 33}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     60.74      82.09      92.22 {txt}{c |}{res}     65.61 
+{txt}           No Latrine {c |}{res}     39.26      17.91       7.78 {txt}{c |}{res}     34.39 
+{txt}{hline 22}{c +}{hline 33}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}401.8052  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}        Sector
+            latrine)) {c |}     Rural      Urban {c |}     Total
+{hline 22}{c +}{hline 22}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     33.63      86.41 {txt}{c |}{res}     53.64 
+{txt}           No Latrine {c |}{res}     66.37      13.59 {txt}{c |}{res}     46.36 
+{txt}{hline 22}{c +}{hline 22}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res} 2.1e+03  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}        Sector
+            latrine)) {c |}     Rural      Urban {c |}     Total
+{hline 22}{c +}{hline 22}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     45.82      92.72 {txt}{c |}{res}     65.61 
+{txt}           No Latrine {c |}{res}     54.18       7.28 {txt}{c |}{res}     34.39 
+{txt}{hline 22}{c +}{hline 22}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res} 2.6e+03  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}        RECODE of MDW_Type
+            latrine)) {c |}       Tap  Tube-well     Others {c |}     Total
+{hline 22}{c +}{hline 33}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     85.62      46.15      60.43 {txt}{c |}{res}     53.64 
+{txt}           No Latrine {c |}{res}     14.38      53.85      39.57 {txt}{c |}{res}     46.36 
+{txt}{hline 22}{c +}{hline 33}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}729.5930  {txt} Pr = {res}0.000
+
+            {txt}RECODE of {c |}
+      Latrine_Recoded {c |}
+           (RECODE of {c |}
+Latrine_Type (Type of {c |}        RECODE of MDW_Type
+            latrine)) {c |}       Tap  Tube-well     Others {c |}     Total
+{hline 22}{c +}{hline 33}{c +}{hline 10}
+Some form of Latrine  {c |}{res}     87.76      56.51      84.59 {txt}{c |}{res}     65.61 
+{txt}           No Latrine {c |}{res}     12.24      43.49      15.41 {txt}{c |}{res}     34.39 
+{txt}{hline 22}{c +}{hline 33}{c +}{hline 10}
+                Total {c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}955.5727  {txt} Pr = {res}0.000
+{txt}
+{com}. 
+. 
+. 
+. preserve
+{txt}
+{com}. keep if Year==1
+{txt}(10,931 observations deleted)
+
+{com}. proportion Latrine_Rec, over(State_District) 
+{res}
+{txt}Proportion estimation{col 35}Number of obs{col 51}= {res}     7,921
+
+      {txt}_prop_1: Latrine_Rec = {res}Some form of Latrine
+      {txt}_prop_2: Latrine_Rec = {res}No Latrine
+
+    {txt}Sahranpur: State_District = {res}Sahranpur
+ {txt}Muzzafarna~r: State_District = {res}Muzzafarnagar
+       {txt}Bijnor: State_District = {res}Bijnor
+    {txt}Moradabad: State_District = {res}Moradabad
+       {txt}Rampur: State_District = {res}Rampur
+    {txt}_subpop_6: State_District = {res}Jyotiba Phule Nagar
+       {txt}Meerut: State_District = {res}Meerut
+      {txt}Baghpat: State_District = {res}Baghpat
+    {txt}Ghaziabad: State_District = {res}Ghaziabad
+   {txt}_subpop_10: State_District = {res}Gautam Buddha Nagar
+   {txt}Bulandashr: State_District = {res}Bulandashr
+      {txt}Aligarh: State_District = {res}Aligarh
+   {txt}_subpop_13: State_District = {res}Mahamaya Nagar
+      {txt}Mathura: State_District = {res}Mathura
+         {txt}Agra: State_District = {res}Agra
+    {txt}Firozabad: State_District = {res}Firozabad
+     {txt}Mainpuri: State_District = {res}Mainpuri
+       {txt}Buduan: State_District = {res}Buduan
+     {txt}Bareilly: State_District = {res}Bareilly
+      {txt}Philbit: State_District = {res}Philbit
+  {txt}Shajahanpur: State_District = {res}Shajahanpur
+        {txt}Kheri: State_District = {res}Kheri
+      {txt}Sitapur: State_District = {res}Sitapur
+       {txt}Hardoi: State_District = {res}Hardoi
+        {txt}Unnao: State_District = {res}Unnao
+      {txt}Lucknow: State_District = {res}Lucknow
+   {txt}_subpop_27: State_District = {res}Rae Bareli
+   {txt}Farukkabad: State_District = {res}Farukkabad
+      {txt}Kannauj: State_District = {res}Kannauj
+       {txt}Etawah: State_District = {res}Etawah
+      {txt}Auraiya: State_District = {res}Auraiya
+   {txt}_subpop_32: State_District = {res}Kanpur Dehat
+   {txt}_subpop_33: State_District = {res}Kanpur Nagar
+       {txt}Jalaun: State_District = {res}Jalaun
+       {txt}Jhansi: State_District = {res}Jhansi
+     {txt}Lalitpur: State_District = {res}Lalitpur
+     {txt}Hamirpur: State_District = {res}Hamirpur
+       {txt}Mahoba: State_District = {res}Mahoba
+        {txt}Banda: State_District = {res}Banda
+   {txt}Chitrakoot: State_District = {res}Chitrakoot
+      {txt}Fatepur: State_District = {res}Fatepur
+   {txt}Pratapgarh: State_District = {res}Pratapgarh
+    {txt}Kaushambi: State_District = {res}Kaushambi
+    {txt}Allahabad: State_District = {res}Allahabad
+   {txt}_subpop_45: State_District = {res}Bara Banki
+     {txt}Faizabad: State_District = {res}Faizabad
+   {txt}_subpop_47: State_District = {res}Ambedkar Nagar
+    {txt}Sultanpur: State_District = {res}Sultanpur
+     {txt}Bahraich: State_District = {res}Bahraich
+    {txt}Shrawasti: State_District = {res}Shrawasti
+    {txt}Balrampur: State_District = {res}Balrampur
+        {txt}Gonda: State_District = {res}Gonda
+ {txt}Siddharthn~r: State_District = {res}Siddharthnagar
+        {txt}Basti: State_District = {res}Basti
+   {txt}_subpop_55: State_District = {res}Sant Kabir Nagar
+  {txt}Maharajganj: State_District = {res}Maharajganj
+    {txt}Gorakhpur: State_District = {res}Gorakhpur
+   {txt}Kushinagar: State_District = {res}Kushinagar
+       {txt}Deoria: State_District = {res}Deoria
+     {txt}Azamgarh: State_District = {res}Azamgarh
+          {txt}Mau: State_District = {res}Mau
+       {txt}Ballia: State_District = {res}Ballia
+      {txt}Jaunpur: State_District = {res}Jaunpur
+     {txt}Ghazipur: State_District = {res}Ghazipur
+   {txt}Chandrauli: State_District = {res}Chandrauli
+     {txt}Varanasi: State_District = {res}Varanasi
+   {txt}_subpop_67: State_District = {res}Sant Ravidas Nagar(Bhadohi)
+     {txt}Mirzapur: State_District = {res}Mirzapur
+    {txt}Sonbhadra: State_District = {res}Sonbhadra
+         {txt}Etah: State_District = {res}Etah
+   {txt}_subpop_71: State_District = {res}Kanshiram Nagar
+
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 1}          Over{col 16}{c |} Proportion{col 28}   Std. Err.{col 40}     [95% Con{col 53}f. Interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}_prop_1        {txt}{c |}
+{space 5}Sahranpur {c |}{col 16}{res}{space 2} .8819444{col 28}{space 2} .0269833{col 39}{space 5} .8180143{col 53}{space 3} .9254628
+{txt}{space 1}Muzzafarnagar {c |}{col 16}{res}{space 2} .8579545{col 28}{space 2} .0263892{col 39}{space 5} .7980146{col 53}{space 3} .9022851
+{txt}{space 8}Bijnor {c |}{col 16}{res}{space 2}   .86875{col 28}{space 2} .0267793{col 39}{space 5} .8068341{col 53}{space 3} .9129608
+{txt}{space 5}Moradabad {c |}{col 16}{res}{space 2} .8020833{col 28}{space 2} .0288293{col 39}{space 5} .7394995{col 53}{space 3} .8526281
+{txt}{space 8}Rampur {c |}{col 16}{res}{space 2} .8333333{col 28}{space 2}  .038236{col 39}{space 5}  .744555{col 53}{space 3} .8955843
+{txt}{space 5}_subpop_6 {c |}{col 16}{res}{space 2}    .7375{col 28}{space 2} .0495031{col 39}{space 5} .6298944{col 53}{space 3} .8226296
+{txt}{space 8}Meerut {c |}{col 16}{res}{space 2}     .875{col 28}{space 2}     .025{col 39}{space 5} .8172536{col 53}{space 3} .9163664
+{txt}{space 7}Baghpat {c |}{col 16}{res}{space 2}   .90625{col 28}{space 2} .0367231{col 39}{space 5}  .805556{col 53}{space 3}  .957547
+{txt}{space 5}Ghaziabad {c |}{col 16}{res}{space 2} .8916667{col 28}{space 2}  .020104{col 39}{space 5} .8455223{col 53}{space 3} .9252458
+{txt}{space 4}_subpop_10 {c |}{col 16}{res}{space 2} .9545455{col 28}{space 2}  .022332{col 39}{space 5} .8844821{col 53}{space 3} .9829342
+{txt}{space 4}Bulandashr {c |}{col 16}{res}{space 2} .7430556{col 28}{space 2} .0365395{col 39}{space 5} .6652438{col 53}{space 3} .8080006
+{txt}{space 7}Aligarh {c |}{col 16}{res}{space 2} .7013889{col 28}{space 2} .0382705{col 39}{space 5} .6214553{col 53}{space 3} .7706722
+{txt}{space 4}_subpop_13 {c |}{col 16}{res}{space 2}    .4875{col 28}{space 2} .0562368{col 39}{space 5}  .379601{col 53}{space 3} .5965767
+{txt}{space 7}Mathura {c |}{col 16}{res}{space 2} .5520833{col 28}{space 2} .0510198{col 39}{space 5} .4513182{col 53}{space 3} .6487455
+{txt}{space 10}Agra {c |}{col 16}{res}{space 2} .5885417{col 28}{space 2}  .035607{col 39}{space 5} .5174193{col 53}{space 3} .6561479
+{txt}{space 5}Firozabad {c |}{col 16}{res}{space 2} .6171875{col 28}{space 2}  .043132{col 39}{space 5} .5299066{col 53}{space 3} .6975136
+{txt}{space 6}Mainpuri {c |}{col 16}{res}{space 2} .3766234{col 28}{space 2} .0555805{col 39}{space 5} .2752853{col 53}{space 3} .4900413
+{txt}{space 8}Buduan {c |}{col 16}{res}{space 2} .5347222{col 28}{space 2} .0417112{col 39}{space 5} .4527584{col 53}{space 3} .6148528
+{txt}{space 6}Bareilly {c |}{col 16}{res}{space 2} .7897727{col 28}{space 2} .0308018{col 39}{space 5} .7231003{col 53}{space 3} .8438582
+{txt}{space 7}Philbit {c |}{col 16}{res}{space 2}   .71875{col 28}{space 2} .0461289{col 39}{space 5} .6203303{col 53}{space 3} .7998871
+{txt}{space 3}Shajahanpur {c |}{col 16}{res}{space 2}     .625{col 28}{space 2} .0459509{col 39}{space 5} .5315833{col 53}{space 3} .7099517
+{txt}{space 9}Kheri {c |}{col 16}{res}{space 2}  .296875{col 28}{space 2} .0405416{col 39}{space 5} .2239235{col 53}{space 3} .3818979
+{txt}{space 7}Sitapur {c |}{col 16}{res}{space 2}   .28125{col 28}{space 2} .0398964{col 39}{space 5} .2099626{col 53}{space 3} .3655423
+{txt}{space 8}Hardoi {c |}{col 16}{res}{space 2} .4236111{col 28}{space 2} .0413213{col 39}{space 5} .3453116{col 53}{space 3} .5059444
+{txt}{space 9}Unnao {c |}{col 16}{res}{space 2} .3392857{col 28}{space 2} .0449395{col 39}{space 5} .2574141{col 53}{space 3} .4320467
+{txt}{space 7}Lucknow {c |}{col 16}{res}{space 2}   .83125{col 28}{space 2} .0297022{col 39}{space 5} .7648463{col 53}{space 3} .8818002
+{txt}{space 4}_subpop_27 {c |}{col 16}{res}{space 2}  .453125{col 28}{space 2} .0441724{col 39}{space 5} .3687736{col 53}{space 3}  .540257
+{txt}{space 4}Farukkabad {c |}{col 16}{res}{space 2}    .6375{col 28}{space 2} .0540855{col 39}{space 5} .5264122{col 53}{space 3} .7356173
+{txt}{space 7}Kannauj {c |}{col 16}{res}{space 2}   .34375{col 28}{space 2} .0598392{col 39}{space 5} .2374685{col 53}{space 3} .4683809
+{txt}{space 8}Etawah {c |}{col 16}{res}{space 2}    .5875{col 28}{space 2} .0553863{col 39}{space 5} .4764257{col 53}{space 3} .6903267
+{txt}{space 7}Auraiya {c |}{col 16}{res}{space 2}  .515625{col 28}{space 2} .0629633{col 39}{space 5} .3937298{col 53}{space 3}  .635689
+{txt}{space 4}_subpop_32 {c |}{col 16}{res}{space 2}     .375{col 28}{space 2} .0609938{col 39}{space 5} .2648395{col 53}{space 3} .4998284
+{txt}{space 4}_subpop_33 {c |}{col 16}{res}{space 2} .7727273{col 28}{space 2} .0316787{col 39}{space 5} .7047828{col 53}{space 3} .8288321
+{txt}{space 8}Jalaun {c |}{col 16}{res}{space 2}     .525{col 28}{space 2}  .056184{col 39}{space 5} .4154299{col 53}{space 3} .6322147
+{txt}{space 8}Jhansi {c |}{col 16}{res}{space 2}    .4375{col 28}{space 2} .0508966{col 39}{space 5} .3414741{col 53}{space 3} .5384497
+{txt}{space 6}Lalitpur {c |}{col 16}{res}{space 2}     .375{col 28}{space 2} .0609938{col 39}{space 5} .2648395{col 53}{space 3} .4998284
+{txt}{space 6}Hamirpur {c |}{col 16}{res}{space 2} .5833333{col 28}{space 2} .0719124{col 39}{space 5} .4394222{col 53}{space 3} .7143186
+{txt}{space 8}Mahoba {c |}{col 16}{res}{space 2} .5416667{col 28}{space 2} .0726788{col 39}{space 5} .3996774{col 53}{space 3} .6771965
+{txt}{space 9}Banda {c |}{col 16}{res}{space 2}      .55{col 28}{space 2} .0559724{col 39}{space 5} .4396346{col 53}{space 3} .6556541
+{txt}{space 4}Chitrakoot {c |}{col 16}{res}{space 2} .3333333{col 28}{space 2} .0687614{col 39}{space 5} .2142148{col 53}{space 3}  .478366
+{txt}{space 7}Fatepur {c |}{col 16}{res}{space 2} .4285714{col 28}{space 2} .0469711{col 39}{space 5} .3399183{col 53}{space 3} .5220592
+{txt}{space 4}Pratapgarh {c |}{col 16}{res}{space 2} .2142857{col 28}{space 2} .0389464{col 39}{space 5} .1477035{col 53}{space 3} .3003065
+{txt}{space 5}Kaushambi {c |}{col 16}{res}{space 2}    .3125{col 28}{space 2} .0583971{col 39}{space 5} .2106054{col 53}{space 3} .4364371
+{txt}{space 5}Allahabad {c |}{col 16}{res}{space 2}  .546875{col 28}{space 2} .0360194{col 39}{space 5} .4757984{col 53}{space 3} .6160904
+{txt}{space 4}_subpop_45 {c |}{col 16}{res}{space 2} .2410714{col 28}{space 2} .0405987{col 39}{space 5}   .17054{col 53}{space 3} .3291959
+{txt}{space 6}Faizabad {c |}{col 16}{res}{space 2} .4895833{col 28}{space 2} .0512878{col 39}{space 5} .3907888{col 53}{space 3} .5891983
+{txt}{space 4}_subpop_47 {c |}{col 16}{res}{space 2} .2708333{col 28}{space 2} .0455935{col 39}{space 5} .1910857{col 53}{space 3} .3686934
+{txt}{space 5}Sultanpur {c |}{col 16}{res}{space 2}   .34375{col 28}{space 2} .0421458{col 39}{space 5} .2664206{col 53}{space 3}  .430357
+{txt}{space 6}Bahraich {c |}{col 16}{res}{space 2}   .28125{col 28}{space 2} .0398964{col 39}{space 5} .2099626{col 53}{space 3} .3655423
+{txt}{space 5}Shrawasti {c |}{col 16}{res}{space 2} .4583333{col 28}{space 2} .0726788{col 39}{space 5} .3228035{col 53}{space 3} .6003226
+{txt}{space 5}Balrampur {c |}{col 16}{res}{space 2}       .3{col 28}{space 2}  .051558{col 39}{space 5} .2093959{col 53}{space 3} .4095018
+{txt}{space 9}Gonda {c |}{col 16}{res}{space 2}  .234375{col 28}{space 2} .0375891{col 39}{space 5}  .168766{col 53}{space 3} .3157999
+{txt}Siddharthnagar {c |}{col 16}{res}{space 2} .2291667{col 28}{space 2} .0431215{col 39}{space 5} .1555736{col 53}{space 3} .3242066
+{txt}{space 9}Basti {c |}{col 16}{res}{space 2} .2946429{col 28}{space 2} .0432704{col 39}{space 5} .2173678{col 53}{space 3} .3858457
+{txt}{space 4}_subpop_55 {c |}{col 16}{res}{space 2}  .390625{col 28}{space 2} .0614684{col 39}{space 5} .2787068{col 53}{space 3} .5153736
+{txt}{space 3}Maharajganj {c |}{col 16}{res}{space 2} .3645833{col 28}{space 2} .0493817{col 39}{space 5} .2742073{col 53}{space 3} .4656364
+{txt}{space 5}Gorakhpur {c |}{col 16}{res}{space 2} .4475524{col 28}{space 2} .0417276{col 39}{space 5} .3678636{col 53}{space 3} .5300297
+{txt}{space 4}Kushinagar {c |}{col 16}{res}{space 2} .2678571{col 28}{space 2} .0420328{col 39}{space 5} .1937741{col 53}{space 3} .3576973
+{txt}{space 8}Deoria {c |}{col 16}{res}{space 2} .4094488{col 28}{space 2}  .043807{col 39}{space 5}  .327088{col 53}{space 3} .4972241
+{txt}{space 6}Azamgarh {c |}{col 16}{res}{space 2} .4722222{col 28}{space 2} .0417475{col 39}{space 5} .3918402{col 53}{space 3} .5540708
+{txt}{space 11}Mau {c |}{col 16}{res}{space 2} .3645833{col 28}{space 2} .0493817{col 39}{space 5} .2742073{col 53}{space 3} .4656364
+{txt}{space 8}Ballia {c |}{col 16}{res}{space 2}   .40625{col 28}{space 2} .0435809{col 39}{space 5} .3243917{col 53}{space 3} .4936709
+{txt}{space 7}Jaunpur {c |}{col 16}{res}{space 2} .3680556{col 28}{space 2}   .04033{col 39}{space 5}  .293081{col 53}{space 3} .4500006
+{txt}{space 6}Ghazipur {c |}{col 16}{res}{space 2}  .390625{col 28}{space 2} .0432933{col 39}{space 5} .3097665{col 53}{space 3} .4779741
+{txt}{space 4}Chandrauli {c |}{col 16}{res}{space 2}   .40625{col 28}{space 2} .0503891{col 39}{space 5} .3123856{col 53}{space 3} .5075021
+{txt}{space 6}Varanasi {c |}{col 16}{res}{space 2} .6993007{col 28}{space 2} .0384817{col 39}{space 5} .6189836{col 53}{space 3} .7690054
+{txt}{space 4}_subpop_67 {c |}{col 16}{res}{space 2}  .328125{col 28}{space 2} .0591553{col 39}{space 5} .2239714{col 53}{space 3} .4524729
+{txt}{space 6}Mirzapur {c |}{col 16}{res}{space 2} .2432432{col 28}{space 2} .0409074{col 39}{space 5} .1721292{col 53}{space 3} .3319568
+{txt}{space 5}Sonbhadra {c |}{col 16}{res}{space 2}   .21875{col 28}{space 2} .0520833{col 39}{space 5} .1334978{col 53}{space 3} .3372548
+{txt}{space 10}Etah {c |}{col 16}{res}{space 2}     .525{col 28}{space 2}  .056184{col 39}{space 5} .4154299{col 53}{space 3} .6322147
+{txt}{space 4}_subpop_71 {c |}{col 16}{res}{space 2}    .4875{col 28}{space 2} .0562368{col 39}{space 5}  .379601{col 53}{space 3} .5965767
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}_prop_2        {txt}{c |}
+{space 5}Sahranpur {c |}{col 16}{res}{space 2} .1180556{col 28}{space 2} .0269833{col 39}{space 5} .0745372{col 53}{space 3} .1819857
+{txt}{space 1}Muzzafarnagar {c |}{col 16}{res}{space 2} .1420455{col 28}{space 2} .0263892{col 39}{space 5} .0977149{col 53}{space 3} .2019854
+{txt}{space 8}Bijnor {c |}{col 16}{res}{space 2}   .13125{col 28}{space 2} .0267793{col 39}{space 5} .0870392{col 53}{space 3} .1931659
+{txt}{space 5}Moradabad {c |}{col 16}{res}{space 2} .1979167{col 28}{space 2} .0288293{col 39}{space 5} .1473719{col 53}{space 3} .2605005
+{txt}{space 8}Rampur {c |}{col 16}{res}{space 2} .1666667{col 28}{space 2}  .038236{col 39}{space 5} .1044157{col 53}{space 3}  .255445
+{txt}{space 5}_subpop_6 {c |}{col 16}{res}{space 2}    .2625{col 28}{space 2} .0495031{col 39}{space 5} .1773704{col 53}{space 3} .3701056
+{txt}{space 8}Meerut {c |}{col 16}{res}{space 2}     .125{col 28}{space 2}     .025{col 39}{space 5} .0836336{col 53}{space 3} .1827464
+{txt}{space 7}Baghpat {c |}{col 16}{res}{space 2}   .09375{col 28}{space 2} .0367231{col 39}{space 5}  .042453{col 53}{space 3}  .194444
+{txt}{space 5}Ghaziabad {c |}{col 16}{res}{space 2} .1083333{col 28}{space 2}  .020104{col 39}{space 5} .0747542{col 53}{space 3} .1544777
+{txt}{space 4}_subpop_10 {c |}{col 16}{res}{space 2} .0454545{col 28}{space 2}  .022332{col 39}{space 5} .0170658{col 53}{space 3} .1155179
+{txt}{space 4}Bulandashr {c |}{col 16}{res}{space 2} .2569444{col 28}{space 2} .0365395{col 39}{space 5} .1919994{col 53}{space 3} .3347562
+{txt}{space 7}Aligarh {c |}{col 16}{res}{space 2} .2986111{col 28}{space 2} .0382705{col 39}{space 5} .2293278{col 53}{space 3} .3785447
+{txt}{space 4}_subpop_13 {c |}{col 16}{res}{space 2}    .5125{col 28}{space 2} .0562368{col 39}{space 5} .4034233{col 53}{space 3}  .620399
+{txt}{space 7}Mathura {c |}{col 16}{res}{space 2} .4479167{col 28}{space 2} .0510198{col 39}{space 5} .3512545{col 53}{space 3} .5486818
+{txt}{space 10}Agra {c |}{col 16}{res}{space 2} .4114583{col 28}{space 2}  .035607{col 39}{space 5} .3438521{col 53}{space 3} .4825807
+{txt}{space 5}Firozabad {c |}{col 16}{res}{space 2} .3828125{col 28}{space 2}  .043132{col 39}{space 5} .3024864{col 53}{space 3} .4700934
+{txt}{space 6}Mainpuri {c |}{col 16}{res}{space 2} .6233766{col 28}{space 2} .0555805{col 39}{space 5} .5099587{col 53}{space 3} .7247147
+{txt}{space 8}Buduan {c |}{col 16}{res}{space 2} .4652778{col 28}{space 2} .0417112{col 39}{space 5} .3851472{col 53}{space 3} .5472416
+{txt}{space 6}Bareilly {c |}{col 16}{res}{space 2} .2102273{col 28}{space 2} .0308018{col 39}{space 5} .1561418{col 53}{space 3} .2768997
+{txt}{space 7}Philbit {c |}{col 16}{res}{space 2}   .28125{col 28}{space 2} .0461289{col 39}{space 5} .2001129{col 53}{space 3} .3796697
+{txt}{space 3}Shajahanpur {c |}{col 16}{res}{space 2}     .375{col 28}{space 2} .0459509{col 39}{space 5} .2900483{col 53}{space 3} .4684167
+{txt}{space 9}Kheri {c |}{col 16}{res}{space 2}  .703125{col 28}{space 2} .0405416{col 39}{space 5} .6181021{col 53}{space 3} .7760765
+{txt}{space 7}Sitapur {c |}{col 16}{res}{space 2}   .71875{col 28}{space 2} .0398964{col 39}{space 5} .6344577{col 53}{space 3} .7900374
+{txt}{space 8}Hardoi {c |}{col 16}{res}{space 2} .5763889{col 28}{space 2} .0413213{col 39}{space 5} .4940556{col 53}{space 3} .6546884
+{txt}{space 9}Unnao {c |}{col 16}{res}{space 2} .6607143{col 28}{space 2} .0449395{col 39}{space 5} .5679533{col 53}{space 3} .7425859
+{txt}{space 7}Lucknow {c |}{col 16}{res}{space 2}   .16875{col 28}{space 2} .0297022{col 39}{space 5} .1181998{col 53}{space 3} .2351537
+{txt}{space 4}_subpop_27 {c |}{col 16}{res}{space 2}  .546875{col 28}{space 2} .0441724{col 39}{space 5}  .459743{col 53}{space 3} .6312264
+{txt}{space 4}Farukkabad {c |}{col 16}{res}{space 2}    .3625{col 28}{space 2} .0540855{col 39}{space 5} .2643827{col 53}{space 3} .4735878
+{txt}{space 7}Kannauj {c |}{col 16}{res}{space 2}   .65625{col 28}{space 2} .0598392{col 39}{space 5} .5316191{col 53}{space 3} .7625315
+{txt}{space 8}Etawah {c |}{col 16}{res}{space 2}    .4125{col 28}{space 2} .0553863{col 39}{space 5} .3096733{col 53}{space 3} .5235743
+{txt}{space 7}Auraiya {c |}{col 16}{res}{space 2}  .484375{col 28}{space 2} .0629633{col 39}{space 5}  .364311{col 53}{space 3} .6062702
+{txt}{space 4}_subpop_32 {c |}{col 16}{res}{space 2}     .625{col 28}{space 2} .0609938{col 39}{space 5} .5001716{col 53}{space 3} .7351605
+{txt}{space 4}_subpop_33 {c |}{col 16}{res}{space 2} .2272727{col 28}{space 2} .0316787{col 39}{space 5} .1711679{col 53}{space 3} .2952172
+{txt}{space 8}Jalaun {c |}{col 16}{res}{space 2}     .475{col 28}{space 2}  .056184{col 39}{space 5} .3677853{col 53}{space 3} .5845701
+{txt}{space 8}Jhansi {c |}{col 16}{res}{space 2}    .5625{col 28}{space 2} .0508966{col 39}{space 5} .4615503{col 53}{space 3} .6585259
+{txt}{space 6}Lalitpur {c |}{col 16}{res}{space 2}     .625{col 28}{space 2} .0609938{col 39}{space 5} .5001716{col 53}{space 3} .7351605
+{txt}{space 6}Hamirpur {c |}{col 16}{res}{space 2} .4166667{col 28}{space 2} .0719124{col 39}{space 5} .2856814{col 53}{space 3} .5605778
+{txt}{space 8}Mahoba {c |}{col 16}{res}{space 2} .4583333{col 28}{space 2} .0726788{col 39}{space 5} .3228035{col 53}{space 3} .6003226
+{txt}{space 9}Banda {c |}{col 16}{res}{space 2}      .45{col 28}{space 2} .0559724{col 39}{space 5} .3443459{col 53}{space 3} .5603654
+{txt}{space 4}Chitrakoot {c |}{col 16}{res}{space 2} .6666667{col 28}{space 2} .0687614{col 39}{space 5}  .521634{col 53}{space 3} .7857852
+{txt}{space 7}Fatepur {c |}{col 16}{res}{space 2} .5714286{col 28}{space 2} .0469711{col 39}{space 5} .4779408{col 53}{space 3} .6600817
+{txt}{space 4}Pratapgarh {c |}{col 16}{res}{space 2} .7857143{col 28}{space 2} .0389464{col 39}{space 5} .6996935{col 53}{space 3} .8522965
+{txt}{space 5}Kaushambi {c |}{col 16}{res}{space 2}    .6875{col 28}{space 2} .0583971{col 39}{space 5} .5635629{col 53}{space 3} .7893946
+{txt}{space 5}Allahabad {c |}{col 16}{res}{space 2}  .453125{col 28}{space 2} .0360194{col 39}{space 5} .3839096{col 53}{space 3} .5242016
+{txt}{space 4}_subpop_45 {c |}{col 16}{res}{space 2} .7589286{col 28}{space 2} .0405987{col 39}{space 5} .6708041{col 53}{space 3}   .82946
+{txt}{space 6}Faizabad {c |}{col 16}{res}{space 2} .5104167{col 28}{space 2} .0512878{col 39}{space 5} .4108017{col 53}{space 3} .6092112
+{txt}{space 4}_subpop_47 {c |}{col 16}{res}{space 2} .7291667{col 28}{space 2} .0455935{col 39}{space 5} .6313066{col 53}{space 3} .8089143
+{txt}{space 5}Sultanpur {c |}{col 16}{res}{space 2}   .65625{col 28}{space 2} .0421458{col 39}{space 5}  .569643{col 53}{space 3} .7335794
+{txt}{space 6}Bahraich {c |}{col 16}{res}{space 2}   .71875{col 28}{space 2} .0398964{col 39}{space 5} .6344577{col 53}{space 3} .7900374
+{txt}{space 5}Shrawasti {c |}{col 16}{res}{space 2} .5416667{col 28}{space 2} .0726788{col 39}{space 5} .3996774{col 53}{space 3} .6771965
+{txt}{space 5}Balrampur {c |}{col 16}{res}{space 2}       .7{col 28}{space 2}  .051558{col 39}{space 5} .5904982{col 53}{space 3} .7906041
+{txt}{space 9}Gonda {c |}{col 16}{res}{space 2}  .765625{col 28}{space 2} .0375891{col 39}{space 5} .6842001{col 53}{space 3}  .831234
+{txt}Siddharthnagar {c |}{col 16}{res}{space 2} .7708333{col 28}{space 2} .0431215{col 39}{space 5} .6757934{col 53}{space 3} .8444264
+{txt}{space 9}Basti {c |}{col 16}{res}{space 2} .7053571{col 28}{space 2} .0432704{col 39}{space 5} .6141543{col 53}{space 3} .7826322
+{txt}{space 4}_subpop_55 {c |}{col 16}{res}{space 2}  .609375{col 28}{space 2} .0614684{col 39}{space 5} .4846264{col 53}{space 3} .7212932
+{txt}{space 3}Maharajganj {c |}{col 16}{res}{space 2} .6354167{col 28}{space 2} .0493817{col 39}{space 5} .5343636{col 53}{space 3} .7257927
+{txt}{space 5}Gorakhpur {c |}{col 16}{res}{space 2} .5524476{col 28}{space 2} .0417276{col 39}{space 5} .4699703{col 53}{space 3} .6321364
+{txt}{space 4}Kushinagar {c |}{col 16}{res}{space 2} .7321429{col 28}{space 2} .0420328{col 39}{space 5} .6423027{col 53}{space 3} .8062259
+{txt}{space 8}Deoria {c |}{col 16}{res}{space 2} .5905512{col 28}{space 2}  .043807{col 39}{space 5} .5027759{col 53}{space 3}  .672912
+{txt}{space 6}Azamgarh {c |}{col 16}{res}{space 2} .5277778{col 28}{space 2} .0417475{col 39}{space 5} .4459292{col 53}{space 3} .6081598
+{txt}{space 11}Mau {c |}{col 16}{res}{space 2} .6354167{col 28}{space 2} .0493817{col 39}{space 5} .5343636{col 53}{space 3} .7257927
+{txt}{space 8}Ballia {c |}{col 16}{res}{space 2}   .59375{col 28}{space 2} .0435809{col 39}{space 5} .5063291{col 53}{space 3} .6756083
+{txt}{space 7}Jaunpur {c |}{col 16}{res}{space 2} .6319444{col 28}{space 2}   .04033{col 39}{space 5} .5499994{col 53}{space 3}  .706919
+{txt}{space 6}Ghazipur {c |}{col 16}{res}{space 2}  .609375{col 28}{space 2} .0432933{col 39}{space 5} .5220259{col 53}{space 3} .6902335
+{txt}{space 4}Chandrauli {c |}{col 16}{res}{space 2}   .59375{col 28}{space 2} .0503891{col 39}{space 5} .4924979{col 53}{space 3} .6876144
+{txt}{space 6}Varanasi {c |}{col 16}{res}{space 2} .3006993{col 28}{space 2} .0384817{col 39}{space 5} .2309946{col 53}{space 3} .3810164
+{txt}{space 4}_subpop_67 {c |}{col 16}{res}{space 2}  .671875{col 28}{space 2} .0591553{col 39}{space 5} .5475271{col 53}{space 3} .7760286
+{txt}{space 6}Mirzapur {c |}{col 16}{res}{space 2} .7567568{col 28}{space 2} .0409074{col 39}{space 5} .6680432{col 53}{space 3} .8278708
+{txt}{space 5}Sonbhadra {c |}{col 16}{res}{space 2}   .78125{col 28}{space 2} .0520833{col 39}{space 5} .6627452{col 53}{space 3} .8665022
+{txt}{space 10}Etah {c |}{col 16}{res}{space 2}     .475{col 28}{space 2}  .056184{col 39}{space 5} .3677853{col 53}{space 3} .5845701
+{txt}{space 4}_subpop_71 {c |}{col 16}{res}{space 2}    .5125{col 28}{space 2} .0562368{col 39}{space 5} .4034233{col 53}{space 3}  .620399
+{txt}{hline 15}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. restore 
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}. keep if Year==2
+{txt}(7,921 observations deleted)
+
+{com}. proportion Latrine_Rec, over(State_District) 
+{res}
+{txt}Proportion estimation{col 35}Number of obs{col 51}= {res}    10,931
+
+      {txt}_prop_1: Latrine_Rec = {res}Some form of Latrine
+      {txt}_prop_2: Latrine_Rec = {res}No Latrine
+
+    {txt}Sahranpur: State_District = {res}Sahranpur
+ {txt}Muzzafarna~r: State_District = {res}Muzzafarnagar
+       {txt}Bijnor: State_District = {res}Bijnor
+    {txt}Moradabad: State_District = {res}Moradabad
+       {txt}Rampur: State_District = {res}Rampur
+    {txt}_subpop_6: State_District = {res}Jyotiba Phule Nagar
+       {txt}Meerut: State_District = {res}Meerut
+      {txt}Baghpat: State_District = {res}Baghpat
+    {txt}Ghaziabad: State_District = {res}Ghaziabad
+   {txt}_subpop_10: State_District = {res}Gautam Buddha Nagar
+   {txt}Bulandashr: State_District = {res}Bulandashr
+      {txt}Aligarh: State_District = {res}Aligarh
+   {txt}_subpop_13: State_District = {res}Mahamaya Nagar
+      {txt}Mathura: State_District = {res}Mathura
+         {txt}Agra: State_District = {res}Agra
+    {txt}Firozabad: State_District = {res}Firozabad
+     {txt}Mainpuri: State_District = {res}Mainpuri
+       {txt}Buduan: State_District = {res}Buduan
+     {txt}Bareilly: State_District = {res}Bareilly
+      {txt}Philbit: State_District = {res}Philbit
+  {txt}Shajahanpur: State_District = {res}Shajahanpur
+        {txt}Kheri: State_District = {res}Kheri
+      {txt}Sitapur: State_District = {res}Sitapur
+       {txt}Hardoi: State_District = {res}Hardoi
+        {txt}Unnao: State_District = {res}Unnao
+      {txt}Lucknow: State_District = {res}Lucknow
+   {txt}_subpop_27: State_District = {res}Rae Bareli
+   {txt}Farukkabad: State_District = {res}Farukkabad
+      {txt}Kannauj: State_District = {res}Kannauj
+       {txt}Etawah: State_District = {res}Etawah
+      {txt}Auraiya: State_District = {res}Auraiya
+   {txt}_subpop_32: State_District = {res}Kanpur Dehat
+   {txt}_subpop_33: State_District = {res}Kanpur Nagar
+       {txt}Jalaun: State_District = {res}Jalaun
+       {txt}Jhansi: State_District = {res}Jhansi
+     {txt}Lalitpur: State_District = {res}Lalitpur
+     {txt}Hamirpur: State_District = {res}Hamirpur
+       {txt}Mahoba: State_District = {res}Mahoba
+        {txt}Banda: State_District = {res}Banda
+   {txt}Chitrakoot: State_District = {res}Chitrakoot
+      {txt}Fatepur: State_District = {res}Fatepur
+   {txt}Pratapgarh: State_District = {res}Pratapgarh
+    {txt}Kaushambi: State_District = {res}Kaushambi
+    {txt}Allahabad: State_District = {res}Allahabad
+   {txt}_subpop_45: State_District = {res}Bara Banki
+     {txt}Faizabad: State_District = {res}Faizabad
+   {txt}_subpop_47: State_District = {res}Ambedkar Nagar
+    {txt}Sultanpur: State_District = {res}Sultanpur
+     {txt}Bahraich: State_District = {res}Bahraich
+    {txt}Shrawasti: State_District = {res}Shrawasti
+    {txt}Balrampur: State_District = {res}Balrampur
+        {txt}Gonda: State_District = {res}Gonda
+ {txt}Siddharthn~r: State_District = {res}Siddharthnagar
+        {txt}Basti: State_District = {res}Basti
+   {txt}_subpop_55: State_District = {res}Sant Kabir Nagar
+  {txt}Maharajganj: State_District = {res}Maharajganj
+    {txt}Gorakhpur: State_District = {res}Gorakhpur
+   {txt}Kushinagar: State_District = {res}Kushinagar
+       {txt}Deoria: State_District = {res}Deoria
+     {txt}Azamgarh: State_District = {res}Azamgarh
+          {txt}Mau: State_District = {res}Mau
+       {txt}Ballia: State_District = {res}Ballia
+      {txt}Jaunpur: State_District = {res}Jaunpur
+     {txt}Ghazipur: State_District = {res}Ghazipur
+   {txt}Chandrauli: State_District = {res}Chandrauli
+     {txt}Varanasi: State_District = {res}Varanasi
+   {txt}_subpop_67: State_District = {res}Sant Ravidas Nagar(Bhadohi)
+     {txt}Mirzapur: State_District = {res}Mirzapur
+    {txt}Sonbhadra: State_District = {res}Sonbhadra
+         {txt}Etah: State_District = {res}Etah
+   {txt}_subpop_71: State_District = {res}Kanshiram Nagar
+
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 1}          Over{col 16}{c |} Proportion{col 28}   Std. Err.{col 40}     [95% Con{col 53}f. Interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}_prop_1        {txt}{c |}
+{space 5}Sahranpur {c |}{col 16}{res}{space 2} .8385417{col 28}{space 2} .0266242{col 39}{space 5} .7793617{col 53}{space 3} .8842067
+{txt}{space 1}Muzzafarnagar {c |}{col 16}{res}{space 2} .9764706{col 28}{space 2} .0095108{col 39}{space 5} .9485477{col 53}{space 3} .9894091
+{txt}{space 8}Bijnor {c |}{col 16}{res}{space 2}    .9375{col 28}{space 2}  .017515{col 39}{space 5} .8930336{col 53}{space 3} .9642221
+{txt}{space 5}Moradabad {c |}{col 16}{res}{space 2} .9583333{col 28}{space 2} .0117954{col 39}{space 5} .9280065{col 53}{space 3} .9762126
+{txt}{space 8}Rampur {c |}{col 16}{res}{space 2} .9140625{col 28}{space 2} .0248701{col 39}{space 5} .8511531{col 53}{space 3} .9518865
+{txt}{space 5}_subpop_6 {c |}{col 16}{res}{space 2} .9583333{col 28}{space 2} .0205017{col 39}{space 5} .8936965{col 53}{space 3} .9843563
+{txt}{space 8}Meerut {c |}{col 16}{res}{space 2} .9910314{col 28}{space 2} .0063275{col 39}{space 5} .9647556{col 53}{space 3} .9977632
+{txt}{space 7}Baghpat {c |}{col 16}{res}{space 2}    .9375{col 28}{space 2} .0304969{col 39}{space 5} .8439366{col 53}{space 3} .9765301
+{txt}{space 5}Ghaziabad {c |}{col 16}{res}{space 2} .9927361{col 28}{space 2} .0041836{col 39}{space 5} .9776936{col 53}{space 3} .9976588
+{txt}{space 4}_subpop_10 {c |}{col 16}{res}{space 2} .9915966{col 28}{space 2} .0084034{col 39}{space 5} .9423449{col 53}{space 3} .9988275
+{txt}{space 4}Bulandashr {c |}{col 16}{res}{space 2}   .80625{col 28}{space 2} .0313442{col 39}{space 5}  .737402{col 53}{space 3} .8604631
+{txt}{space 7}Aligarh {c |}{col 16}{res}{space 2} .7633929{col 28}{space 2}   .02846{col 39}{space 5}  .703186{col 53}{space 3} .8146069
+{txt}{space 4}_subpop_13 {c |}{col 16}{res}{space 2} .6666667{col 28}{space 2} .0483651{col 39}{space 5} .5662403{col 53}{space 3} .7539454
+{txt}{space 7}Mathura {c |}{col 16}{res}{space 2} .7244094{col 28}{space 2} .0398051{col 39}{space 5}  .640057{col 53}{space 3} .7953156
+{txt}{space 10}Agra {c |}{col 16}{res}{space 2} .7832168{col 28}{space 2}  .024408{col 39}{space 5} .7315941{col 53}{space 3} .8272552
+{txt}{space 5}Firozabad {c |}{col 16}{res}{space 2}    .5625{col 28}{space 2} .0440198{col 39}{space 5} .4751925{col 53}{space 3} .6461001
+{txt}{space 6}Mainpuri {c |}{col 16}{res}{space 2} .6145833{col 28}{space 2} .0499337{col 39}{space 5} .5133473{col 53}{space 3} .7067885
+{txt}{space 8}Buduan {c |}{col 16}{res}{space 2}  .578125{col 28}{space 2} .0357344{col 39}{space 5} .5069711{col 53}{space 3} .6461768
+{txt}{space 6}Bareilly {c |}{col 16}{res}{space 2} .7847222{col 28}{space 2} .0242614{col 39}{space 5} .7333895{col 53}{space 3} .8284829
+{txt}{space 7}Philbit {c |}{col 16}{res}{space 2} .7157895{col 28}{space 2}  .046521{col 39}{space 5} .6166662{col 53}{space 3} .7976902
+{txt}{space 3}Shajahanpur {c |}{col 16}{res}{space 2}     .575{col 28}{space 2} .0392039{col 39}{space 5} .4969546{col 53}{space 3} .6494776
+{txt}{space 9}Kheri {c |}{col 16}{res}{space 2} .3854167{col 28}{space 2} .0352159{col 39}{space 5} .3190714{col 53}{space 3} .4563126
+{txt}{space 7}Sitapur {c |}{col 16}{res}{space 2}    .4375{col 28}{space 2} .0332199{col 39}{space 5} .3738076{col 53}{space 3} .5033219
+{txt}{space 8}Hardoi {c |}{col 16}{res}{space 2} .4947917{col 28}{space 2} .0361768{col 39}{space 5} .4244537{col 53}{space 3} .5653364
+{txt}{space 9}Unnao {c |}{col 16}{res}{space 2}   .60625{col 28}{space 2}  .038747{col 39}{space 5} .5283208{col 53}{space 3} .6791238
+{txt}{space 7}Lucknow {c |}{col 16}{res}{space 2} .9302326{col 28}{space 2} .0137555{col 39}{space 5} .8979645{col 53}{space 3} .9528321
+{txt}{space 4}_subpop_27 {c |}{col 16}{res}{space 2}    .4625{col 28}{space 2} .0395409{col 39}{space 5}  .386496{col 53}{space 3} .5402877
+{txt}{space 4}Farukkabad {c |}{col 16}{res}{space 2} .6458333{col 28}{space 2} .0490684{col 39}{space 5} .5449458{col 53}{space 3} .7352215
+{txt}{space 7}Kannauj {c |}{col 16}{res}{space 2}   .84375{col 28}{space 2} .0372525{col 39}{space 5}  .756303{col 53}{space 3} .9038089
+{txt}{space 8}Etawah {c |}{col 16}{res}{space 2}   .59375{col 28}{space 2} .0503891{col 39}{space 5} .4925022{col 53}{space 3} .6876107
+{txt}{space 7}Auraiya {c |}{col 16}{res}{space 2}    .5625{col 28}{space 2} .0508966{col 39}{space 5} .4615546{col 53}{space 3}  .658522
+{txt}{space 4}_subpop_32 {c |}{col 16}{res}{space 2} .6041667{col 28}{space 2} .0501733{col 39}{space 5} .5029031{col 53}{space 3} .6972214
+{txt}{space 4}_subpop_33 {c |}{col 16}{res}{space 2}     .875{col 28}{space 2} .0176525{col 39}{space 5} .8361078{col 53}{space 3} .9057038
+{txt}{space 8}Jalaun {c |}{col 16}{res}{space 2} .7159091{col 28}{space 2} .0483502{col 39}{space 5} .6126028{col 53}{space 3} .8006324
+{txt}{space 8}Jhansi {c |}{col 16}{res}{space 2} .6953125{col 28}{space 2} .0408428{col 39}{space 5} .6099673{col 53}{space 3} .7690536
+{txt}{space 6}Lalitpur {c |}{col 16}{res}{space 2}  .546875{col 28}{space 2} .0627166{col 39}{space 5} .4235903{col 53}{space 3} .6646657
+{txt}{space 6}Hamirpur {c |}{col 16}{res}{space 2} .8571429{col 28}{space 2} .0471842{col 39}{space 5} .7381603{col 53}{space 3} .9273778
+{txt}{space 8}Mahoba {c |}{col 16}{res}{space 2}  .765625{col 28}{space 2} .0533695{col 39}{space 5} .6458344{col 53}{space 3} .8540545
+{txt}{space 9}Banda {c |}{col 16}{res}{space 2}    .6875{col 28}{space 2} .0475554{col 39}{space 5} .5877263{col 53}{space 3} .7724752
+{txt}{space 4}Chitrakoot {c |}{col 16}{res}{space 2}   .53125{col 28}{space 2} .0628709{col 39}{space 5} .4086078{col 53}{space 3} .6502299
+{txt}{space 7}Fatepur {c |}{col 16}{res}{space 2}   .65625{col 28}{space 2} .0421458{col 39}{space 5} .5696468{col 53}{space 3} .7335764
+{txt}{space 4}Pratapgarh {c |}{col 16}{res}{space 2}    .3625{col 28}{space 2} .0381237{col 39}{space 5} .2915428{col 53}{space 3} .4400013
+{txt}{space 5}Kaushambi {c |}{col 16}{res}{space 2} .5416667{col 28}{space 2} .0511205{col 39}{space 5} .4411317{col 53}{space 3} .6389198
+{txt}{space 5}Allahabad {c |}{col 16}{res}{space 2} .5511364{col 28}{space 2} .0265481{col 39}{space 5} .4987267{col 53}{space 3} .6024346
+{txt}{space 4}_subpop_45 {c |}{col 16}{res}{space 2} .6226415{col 28}{space 2} .0385627{col 39}{space 5} .5446458{col 53}{space 3} .6947647
+{txt}{space 6}Faizabad {c |}{col 16}{res}{space 2}   .34375{col 28}{space 2} .0421458{col 39}{space 5} .2664236{col 53}{space 3} .4303532
+{txt}{space 4}_subpop_47 {c |}{col 16}{res}{space 2} .4609375{col 28}{space 2} .0442322{col 39}{space 5} .3762463{col 53}{space 3} .5479456
+{txt}{space 5}Sultanpur {c |}{col 16}{res}{space 2}  .328125{col 28}{space 2}  .033974{col 39}{space 5} .2652703{col 53}{space 3} .3978091
+{txt}{space 6}Bahraich {c |}{col 16}{res}{space 2}       .3{col 28}{space 2} .0363422{col 39}{space 5} .2338814{col 53}{space 3} .3756454
+{txt}{space 5}Shrawasti {c |}{col 16}{res}{space 2}  .609375{col 28}{space 2} .0614684{col 39}{space 5} .4846317{col 53}{space 3} .7212889
+{txt}{space 5}Balrampur {c |}{col 16}{res}{space 2} .3958333{col 28}{space 2} .0501733{col 39}{space 5} .3027786{col 53}{space 3} .4970969
+{txt}{space 9}Gonda {c |}{col 16}{res}{space 2}   .40625{col 28}{space 2} .0389493{col 39}{space 5} .3326979{col 53}{space 3} .4842624
+{txt}Siddharthnagar {c |}{col 16}{res}{space 2} .2734375{col 28}{space 2} .0395516{col 39}{space 5} .2030259{col 53}{space 3} .3573202
+{txt}{space 9}Basti {c |}{col 16}{res}{space 2} .3515625{col 28}{space 2} .0423676{col 39}{space 5} .2735912{col 53}{space 3} .4383458
+{txt}{space 4}_subpop_55 {c |}{col 16}{res}{space 2} .4895833{col 28}{space 2} .0512878{col 39}{space 5} .3907929{col 53}{space 3} .5891942
+{txt}{space 3}Maharajganj {c |}{col 16}{res}{space 2}     .375{col 28}{space 2}  .042959{col 39}{space 5} .2952314{col 53}{space 3} .4621871
+{txt}{space 5}Gorakhpur {c |}{col 16}{res}{space 2} .6296296{col 28}{space 2} .0329338{col 39}{space 5} .5631107{col 53}{space 3}  .691568
+{txt}{space 4}Kushinagar {c |}{col 16}{res}{space 2} .7058824{col 28}{space 2} .0392157{col 39}{space 5} .6236835{col 53}{space 3}  .776559
+{txt}{space 8}Deoria {c |}{col 16}{res}{space 2}  .609375{col 28}{space 2} .0432933{col 39}{space 5} .5220296{col 53}{space 3} .6902303
+{txt}{space 6}Azamgarh {c |}{col 16}{res}{space 2}  .390625{col 28}{space 2} .0353025{col 39}{space 5} .3240122{col 53}{space 3} .4615815
+{txt}{space 11}Mau {c |}{col 16}{res}{space 2} .5833333{col 28}{space 2} .0505814{col 39}{space 5} .4821441{col 53}{space 3} .6779569
+{txt}{space 8}Ballia {c |}{col 16}{res}{space 2}   .49375{col 28}{space 2} .0396495{col 39}{space 5} .4167983{col 53}{space 3} .5709989
+{txt}{space 7}Jaunpur {c |}{col 16}{res}{space 2}   .40625{col 28}{space 2} .0355371{col 39}{space 5} .3388823{col 53}{space 3} .4773404
+{txt}{space 6}Ghazipur {c |}{col 16}{res}{space 2} .4150943{col 28}{space 2} .0392002{col 39}{space 5}  .340868{col 53}{space 3} .4933851
+{txt}{space 4}Chandrauli {c |}{col 16}{res}{space 2}    .4375{col 28}{space 2} .0508966{col 39}{space 5}  .341478{col 53}{space 3} .5384454
+{txt}{space 6}Varanasi {c |}{col 16}{res}{space 2} .8392157{col 28}{space 2} .0230485{col 39}{space 5} .7887783{col 53}{space 3} .8794499
+{txt}{space 4}_subpop_67 {c |}{col 16}{res}{space 2} .5416667{col 28}{space 2} .0511205{col 39}{space 5} .4411317{col 53}{space 3} .6389198
+{txt}{space 6}Mirzapur {c |}{col 16}{res}{space 2}       .5{col 28}{space 2} .0443678{col 39}{space 5} .4138976{col 53}{space 3} .5861024
+{txt}{space 5}Sonbhadra {c |}{col 16}{res}{space 2} .5208333{col 28}{space 2} .0512544{col 39}{space 5} .4208735{col 53}{space 3} .6191523
+{txt}{space 10}Etah {c |}{col 16}{res}{space 2} .5833333{col 28}{space 2} .0505814{col 39}{space 5} .4821441{col 53}{space 3} .6779569
+{txt}{space 4}_subpop_71 {c |}{col 16}{res}{space 2} .6041667{col 28}{space 2} .0501733{col 39}{space 5} .5029031{col 53}{space 3} .6972214
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}_prop_2        {txt}{c |}
+{space 5}Sahranpur {c |}{col 16}{res}{space 2} .1614583{col 28}{space 2} .0266242{col 39}{space 5} .1157933{col 53}{space 3} .2206383
+{txt}{space 1}Muzzafarnagar {c |}{col 16}{res}{space 2} .0235294{col 28}{space 2} .0095108{col 39}{space 5} .0105909{col 53}{space 3} .0514523
+{txt}{space 8}Bijnor {c |}{col 16}{res}{space 2}    .0625{col 28}{space 2}  .017515{col 39}{space 5} .0357779{col 53}{space 3} .1069664
+{txt}{space 5}Moradabad {c |}{col 16}{res}{space 2} .0416667{col 28}{space 2} .0117954{col 39}{space 5} .0237874{col 53}{space 3} .0719935
+{txt}{space 8}Rampur {c |}{col 16}{res}{space 2} .0859375{col 28}{space 2} .0248701{col 39}{space 5} .0481135{col 53}{space 3} .1488469
+{txt}{space 5}_subpop_6 {c |}{col 16}{res}{space 2} .0416667{col 28}{space 2} .0205017{col 39}{space 5} .0156437{col 53}{space 3} .1063035
+{txt}{space 8}Meerut {c |}{col 16}{res}{space 2} .0089686{col 28}{space 2} .0063275{col 39}{space 5} .0022368{col 53}{space 3} .0352444
+{txt}{space 7}Baghpat {c |}{col 16}{res}{space 2}    .0625{col 28}{space 2} .0304969{col 39}{space 5} .0234699{col 53}{space 3} .1560634
+{txt}{space 5}Ghaziabad {c |}{col 16}{res}{space 2} .0072639{col 28}{space 2} .0041836{col 39}{space 5} .0023412{col 53}{space 3} .0223064
+{txt}{space 4}_subpop_10 {c |}{col 16}{res}{space 2} .0084034{col 28}{space 2} .0084034{col 39}{space 5} .0011725{col 53}{space 3} .0576551
+{txt}{space 4}Bulandashr {c |}{col 16}{res}{space 2}   .19375{col 28}{space 2} .0313442{col 39}{space 5} .1395369{col 53}{space 3}  .262598
+{txt}{space 7}Aligarh {c |}{col 16}{res}{space 2} .2366071{col 28}{space 2}   .02846{col 39}{space 5} .1853931{col 53}{space 3}  .296814
+{txt}{space 4}_subpop_13 {c |}{col 16}{res}{space 2} .3333333{col 28}{space 2} .0483651{col 39}{space 5} .2460546{col 53}{space 3} .4337597
+{txt}{space 7}Mathura {c |}{col 16}{res}{space 2} .2755906{col 28}{space 2} .0398051{col 39}{space 5} .2046844{col 53}{space 3}  .359943
+{txt}{space 10}Agra {c |}{col 16}{res}{space 2} .2167832{col 28}{space 2}  .024408{col 39}{space 5} .1727448{col 53}{space 3} .2684059
+{txt}{space 5}Firozabad {c |}{col 16}{res}{space 2}    .4375{col 28}{space 2} .0440198{col 39}{space 5} .3538999{col 53}{space 3} .5248075
+{txt}{space 6}Mainpuri {c |}{col 16}{res}{space 2} .3854167{col 28}{space 2} .0499337{col 39}{space 5} .2932115{col 53}{space 3} .4866527
+{txt}{space 8}Buduan {c |}{col 16}{res}{space 2}  .421875{col 28}{space 2} .0357344{col 39}{space 5} .3538232{col 53}{space 3} .4930289
+{txt}{space 6}Bareilly {c |}{col 16}{res}{space 2} .2152778{col 28}{space 2} .0242614{col 39}{space 5} .1715171{col 53}{space 3} .2666105
+{txt}{space 7}Philbit {c |}{col 16}{res}{space 2} .2842105{col 28}{space 2}  .046521{col 39}{space 5} .2023098{col 53}{space 3} .3833338
+{txt}{space 3}Shajahanpur {c |}{col 16}{res}{space 2}     .425{col 28}{space 2} .0392039{col 39}{space 5} .3505224{col 53}{space 3} .5030454
+{txt}{space 9}Kheri {c |}{col 16}{res}{space 2} .6145833{col 28}{space 2} .0352159{col 39}{space 5} .5436874{col 53}{space 3} .6809286
+{txt}{space 7}Sitapur {c |}{col 16}{res}{space 2}    .5625{col 28}{space 2} .0332199{col 39}{space 5} .4966781{col 53}{space 3} .6261924
+{txt}{space 8}Hardoi {c |}{col 16}{res}{space 2} .5052083{col 28}{space 2} .0361768{col 39}{space 5} .4346636{col 53}{space 3} .5755463
+{txt}{space 9}Unnao {c |}{col 16}{res}{space 2}   .39375{col 28}{space 2}  .038747{col 39}{space 5} .3208762{col 53}{space 3} .4716792
+{txt}{space 7}Lucknow {c |}{col 16}{res}{space 2} .0697674{col 28}{space 2} .0137555{col 39}{space 5} .0471679{col 53}{space 3} .1020355
+{txt}{space 4}_subpop_27 {c |}{col 16}{res}{space 2}    .5375{col 28}{space 2} .0395409{col 39}{space 5} .4597123{col 53}{space 3}  .613504
+{txt}{space 4}Farukkabad {c |}{col 16}{res}{space 2} .3541667{col 28}{space 2} .0490684{col 39}{space 5} .2647785{col 53}{space 3} .4550542
+{txt}{space 7}Kannauj {c |}{col 16}{res}{space 2}   .15625{col 28}{space 2} .0372525{col 39}{space 5} .0961911{col 53}{space 3}  .243697
+{txt}{space 8}Etawah {c |}{col 16}{res}{space 2}   .40625{col 28}{space 2} .0503891{col 39}{space 5} .3123893{col 53}{space 3} .5074978
+{txt}{space 7}Auraiya {c |}{col 16}{res}{space 2}    .4375{col 28}{space 2} .0508966{col 39}{space 5}  .341478{col 53}{space 3} .5384454
+{txt}{space 4}_subpop_32 {c |}{col 16}{res}{space 2} .3958333{col 28}{space 2} .0501733{col 39}{space 5} .3027786{col 53}{space 3} .4970969
+{txt}{space 4}_subpop_33 {c |}{col 16}{res}{space 2}     .125{col 28}{space 2} .0176525{col 39}{space 5} .0942962{col 53}{space 3} .1638922
+{txt}{space 8}Jalaun {c |}{col 16}{res}{space 2} .2840909{col 28}{space 2} .0483502{col 39}{space 5} .1993676{col 53}{space 3} .3873972
+{txt}{space 8}Jhansi {c |}{col 16}{res}{space 2} .3046875{col 28}{space 2} .0408428{col 39}{space 5} .2309464{col 53}{space 3} .3900327
+{txt}{space 6}Lalitpur {c |}{col 16}{res}{space 2}  .453125{col 28}{space 2} .0627166{col 39}{space 5} .3353343{col 53}{space 3} .5764097
+{txt}{space 6}Hamirpur {c |}{col 16}{res}{space 2} .1428571{col 28}{space 2} .0471842{col 39}{space 5} .0726222{col 53}{space 3} .2618397
+{txt}{space 8}Mahoba {c |}{col 16}{res}{space 2}  .234375{col 28}{space 2} .0533695{col 39}{space 5} .1459455{col 53}{space 3} .3541656
+{txt}{space 9}Banda {c |}{col 16}{res}{space 2}    .3125{col 28}{space 2} .0475554{col 39}{space 5} .2275248{col 53}{space 3} .4122737
+{txt}{space 4}Chitrakoot {c |}{col 16}{res}{space 2}   .46875{col 28}{space 2} .0628709{col 39}{space 5} .3497701{col 53}{space 3} .5913922
+{txt}{space 7}Fatepur {c |}{col 16}{res}{space 2}   .34375{col 28}{space 2} .0421458{col 39}{space 5} .2664236{col 53}{space 3} .4303532
+{txt}{space 4}Pratapgarh {c |}{col 16}{res}{space 2}    .6375{col 28}{space 2} .0381237{col 39}{space 5} .5599987{col 53}{space 3} .7084572
+{txt}{space 5}Kaushambi {c |}{col 16}{res}{space 2} .4583333{col 28}{space 2} .0511205{col 39}{space 5} .3610802{col 53}{space 3} .5588683
+{txt}{space 5}Allahabad {c |}{col 16}{res}{space 2} .4488636{col 28}{space 2} .0265481{col 39}{space 5} .3975654{col 53}{space 3} .5012733
+{txt}{space 4}_subpop_45 {c |}{col 16}{res}{space 2} .3773585{col 28}{space 2} .0385627{col 39}{space 5} .3052353{col 53}{space 3} .4553542
+{txt}{space 6}Faizabad {c |}{col 16}{res}{space 2}   .65625{col 28}{space 2} .0421458{col 39}{space 5} .5696468{col 53}{space 3} .7335764
+{txt}{space 4}_subpop_47 {c |}{col 16}{res}{space 2} .5390625{col 28}{space 2} .0442322{col 39}{space 5} .4520544{col 53}{space 3} .6237537
+{txt}{space 5}Sultanpur {c |}{col 16}{res}{space 2}  .671875{col 28}{space 2}  .033974{col 39}{space 5} .6021909{col 53}{space 3} .7347297
+{txt}{space 6}Bahraich {c |}{col 16}{res}{space 2}       .7{col 28}{space 2} .0363422{col 39}{space 5} .6243546{col 53}{space 3} .7661186
+{txt}{space 5}Shrawasti {c |}{col 16}{res}{space 2}  .390625{col 28}{space 2} .0614684{col 39}{space 5} .2787111{col 53}{space 3} .5153683
+{txt}{space 5}Balrampur {c |}{col 16}{res}{space 2} .6041667{col 28}{space 2} .0501733{col 39}{space 5} .5029031{col 53}{space 3} .6972214
+{txt}{space 9}Gonda {c |}{col 16}{res}{space 2}   .59375{col 28}{space 2} .0389493{col 39}{space 5} .5157376{col 53}{space 3} .6673021
+{txt}Siddharthnagar {c |}{col 16}{res}{space 2} .7265625{col 28}{space 2} .0395516{col 39}{space 5} .6426798{col 53}{space 3} .7969741
+{txt}{space 9}Basti {c |}{col 16}{res}{space 2} .6484375{col 28}{space 2} .0423676{col 39}{space 5} .5616542{col 53}{space 3} .7264088
+{txt}{space 4}_subpop_55 {c |}{col 16}{res}{space 2} .5104167{col 28}{space 2} .0512878{col 39}{space 5} .4108058{col 53}{space 3} .6092071
+{txt}{space 3}Maharajganj {c |}{col 16}{res}{space 2}     .625{col 28}{space 2}  .042959{col 39}{space 5} .5378129{col 53}{space 3} .7047686
+{txt}{space 5}Gorakhpur {c |}{col 16}{res}{space 2} .3703704{col 28}{space 2} .0329338{col 39}{space 5}  .308432{col 53}{space 3} .4368893
+{txt}{space 4}Kushinagar {c |}{col 16}{res}{space 2} .2941176{col 28}{space 2} .0392157{col 39}{space 5}  .223441{col 53}{space 3} .3763165
+{txt}{space 8}Deoria {c |}{col 16}{res}{space 2}  .390625{col 28}{space 2} .0432933{col 39}{space 5} .3097697{col 53}{space 3} .4779704
+{txt}{space 6}Azamgarh {c |}{col 16}{res}{space 2}  .609375{col 28}{space 2} .0353025{col 39}{space 5} .5384185{col 53}{space 3} .6759878
+{txt}{space 11}Mau {c |}{col 16}{res}{space 2} .4166667{col 28}{space 2} .0505814{col 39}{space 5} .3220431{col 53}{space 3} .5178559
+{txt}{space 8}Ballia {c |}{col 16}{res}{space 2}   .50625{col 28}{space 2} .0396495{col 39}{space 5} .4290011{col 53}{space 3} .5832017
+{txt}{space 7}Jaunpur {c |}{col 16}{res}{space 2}   .59375{col 28}{space 2} .0355371{col 39}{space 5} .5226596{col 53}{space 3} .6611177
+{txt}{space 6}Ghazipur {c |}{col 16}{res}{space 2} .5849057{col 28}{space 2} .0392002{col 39}{space 5} .5066149{col 53}{space 3}  .659132
+{txt}{space 4}Chandrauli {c |}{col 16}{res}{space 2}    .5625{col 28}{space 2} .0508966{col 39}{space 5} .4615546{col 53}{space 3}  .658522
+{txt}{space 6}Varanasi {c |}{col 16}{res}{space 2} .1607843{col 28}{space 2} .0230485{col 39}{space 5} .1205501{col 53}{space 3} .2112217
+{txt}{space 4}_subpop_67 {c |}{col 16}{res}{space 2} .4583333{col 28}{space 2} .0511205{col 39}{space 5} .3610802{col 53}{space 3} .5588683
+{txt}{space 6}Mirzapur {c |}{col 16}{res}{space 2}       .5{col 28}{space 2} .0443678{col 39}{space 5} .4138976{col 53}{space 3} .5861024
+{txt}{space 5}Sonbhadra {c |}{col 16}{res}{space 2} .4791667{col 28}{space 2} .0512544{col 39}{space 5} .3808477{col 53}{space 3} .5791265
+{txt}{space 10}Etah {c |}{col 16}{res}{space 2} .4166667{col 28}{space 2} .0505814{col 39}{space 5} .3220431{col 53}{space 3} .5178559
+{txt}{space 4}_subpop_71 {c |}{col 16}{res}{space 2} .3958333{col 28}{space 2} .0501733{col 39}{space 5} .3027786{col 53}{space 3} .4970969
+{txt}{hline 15}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. restore
+{txt}
+{com}. 
+. logit Latrine_Rec i.Social_Group i.Rel_Recoded i.Sector i.MDW_recoded i.Year HH_size y HUCE i.State_District,or
+
+{res}{txt}Iteration 0:{space 3}log likelihood = {res: -12640.83}  
+Iteration 1:{space 3}log likelihood = {res:-8186.2474}  
+Iteration 2:{space 3}log likelihood = {res: -7733.989}  
+Iteration 3:{space 3}log likelihood = {res:-7709.9685}  
+Iteration 4:{space 3}log likelihood = {res:-7709.8581}  
+Iteration 5:{space 3}log likelihood = {res:-7709.8581}  
+{res}
+{txt}Logistic regression{col 49}Number of obs{col 67}= {res}    18,851
+{txt}{col 49}LR chi2({res}82{txt}){col 67}= {res}   9861.94
+{txt}{col 49}Prob > chi2{col 67}= {res}    0.0000
+{txt}Log likelihood = {res}-7709.8581{txt}{col 49}Pseudo R2{col 67}= {res}    0.3901
+
+{txt}{hline 26}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}              Latrine_Rec{col 27}{c |} Odds Ratio{col 39}   Std. Err.{col 51}      z{col 59}   P>|z|{col 67}     [95% Con{col 80}f. Interval]
+{hline 26}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 13}Social_Group {c |}
+{space 22}SC  {c |}{col 27}{res}{space 2} 1.073769{col 39}{space 2} .2146049{col 50}{space 1}    0.36{col 59}{space 3}0.722{col 67}{space 4} .7257524{col 80}{space 3} 1.588668
+{txt}{space 21}OBC  {c |}{col 27}{res}{space 2} .6601167{col 39}{space 2} .1302162{col 50}{space 1}   -2.11{col 59}{space 3}0.035{col 67}{space 4} .4484466{col 80}{space 3} .9716969
+{txt}{space 18}Others  {c |}{col 27}{res}{space 2} .2306933{col 39}{space 2} .0464269{col 50}{space 1}   -7.29{col 59}{space 3}0.000{col 67}{space 4} .1555003{col 80}{space 3} .3422462
+{txt}{space 25} {c |}
+{space 14}Rel_Recoded {c |}
+{space 19}Islam  {c |}{col 27}{res}{space 2}  .589543{col 39}{space 2} .0336785{col 50}{space 1}   -9.25{col 59}{space 3}0.000{col 67}{space 4} .5270956{col 80}{space 3} .6593888
+{txt}{space 18}Others  {c |}{col 27}{res}{space 2} .4306381{col 39}{space 2} .1777476{col 50}{space 1}   -2.04{col 59}{space 3}0.041{col 67}{space 4} .1917678{col 80}{space 3} .9670507
+{txt}{space 25} {c |}
+{space 19}Sector {c |}
+{space 19}Urban  {c |}{col 27}{res}{space 2} .1370236{col 39}{space 2}  .007303{col 50}{space 1}  -37.29{col 59}{space 3}0.000{col 67}{space 4} .1234321{col 80}{space 3} .1521117
+{txt}{space 25} {c |}
+{space 14}MDW_recoded {c |}
+{space 5}Tube-well/Hand Pump  {c |}{col 27}{res}{space 2} 1.820915{col 39}{space 2} .1190234{col 50}{space 1}    9.17{col 59}{space 3}0.000{col 67}{space 4} 1.601958{col 80}{space 3} 2.069799
+{txt}{space 18}Others  {c |}{col 27}{res}{space 2} 1.301342{col 39}{space 2} .1779455{col 50}{space 1}    1.93{col 59}{space 3}0.054{col 67}{space 4} .9954012{col 80}{space 3} 1.701315
+{txt}{space 25} {c |}
+{space 21}Year {c |}
+{space 20}2017  {c |}{col 27}{res}{space 2} .6283216{col 39}{space 2} .0266077{col 50}{space 1}  -10.97{col 59}{space 3}0.000{col 67}{space 4} .5782771{col 80}{space 3}  .682697
+{txt}{space 18}HH_size {c |}{col 27}{res}{space 2} 1.136787{col 39}{space 2} .0288572{col 50}{space 1}    5.05{col 59}{space 3}0.000{col 67}{space 4} 1.081612{col 80}{space 3} 1.194777
+{txt}{space 24}y {c |}{col 27}{res}{space 2}  .997346{col 39}{space 2} .0015868{col 50}{space 1}   -1.67{col 59}{space 3}0.095{col 67}{space 4} .9942408{col 80}{space 3} 1.000461
+{txt}{space 21}HUCE {c |}{col 27}{res}{space 2} .9998453{col 39}{space 2} 6.80e-06{col 50}{space 1}  -22.73{col 59}{space 3}0.000{col 67}{space 4}  .999832{col 80}{space 3} .9998586
+{txt}{space 25} {c |}
+{space 11}State_District {c |}
+{space 11}Muzzafarnagar  {c |}{col 27}{res}{space 2} .4961214{col 39}{space 2} .1323999{col 50}{space 1}   -2.63{col 59}{space 3}0.009{col 67}{space 4} .2940545{col 80}{space 3} .8370436
+{txt}{space 18}Bijnor  {c |}{col 27}{res}{space 2} .4109651{col 39}{space 2} .1095152{col 50}{space 1}   -3.34{col 59}{space 3}0.001{col 67}{space 4} .2437666{col 80}{space 3} .6928442
+{txt}{space 15}Moradabad  {c |}{col 27}{res}{space 2} .7355654{col 39}{space 2} .1770052{col 50}{space 1}   -1.28{col 59}{space 3}0.202{col 67}{space 4} .4589756{col 80}{space 3} 1.178835
+{txt}{space 18}Rampur  {c |}{col 27}{res}{space 2} .8138889{col 39}{space 2} .2309189{col 50}{space 1}   -0.73{col 59}{space 3}0.468{col 67}{space 4} .4667236{col 80}{space 3} 1.419288
+{txt}{space 4}Jyotiba Phule Nagar   {c |}{col 27}{res}{space 2}  .714683{col 39}{space 2} .2112497{col 50}{space 1}   -1.14{col 59}{space 3}0.256{col 67}{space 4} .4004156{col 80}{space 3} 1.275604
+{txt}{space 18}Meerut  {c |}{col 27}{res}{space 2} .7246033{col 39}{space 2} .2108645{col 50}{space 1}   -1.11{col 59}{space 3}0.268{col 67}{space 4}  .409633{col 80}{space 3} 1.281757
+{txt}{space 17}Baghpat  {c |}{col 27}{res}{space 2} .4850328{col 39}{space 2} .1895867{col 50}{space 1}   -1.85{col 59}{space 3}0.064{col 67}{space 4} .2254544{col 80}{space 3} 1.043479
+{txt}{space 15}Ghaziabad  {c |}{col 27}{res}{space 2} .8108389{col 39}{space 2} .2248237{col 50}{space 1}   -0.76{col 59}{space 3}0.450{col 67}{space 4}   .47089{col 80}{space 3} 1.396207
+{txt}{space 5}Gautam Buddha Nagar  {c |}{col 27}{res}{space 2} .3898677{col 39}{space 2} .1979549{col 50}{space 1}   -1.86{col 59}{space 3}0.064{col 67}{space 4} .1441187{col 80}{space 3} 1.054664
+{txt}{space 13}Bulandashr   {c |}{col 27}{res}{space 2} 1.655237{col 39}{space 2} .3874759{col 50}{space 1}    2.15{col 59}{space 3}0.031{col 67}{space 4} 1.046169{col 80}{space 3} 2.618899
+{txt}{space 16}Aligarh   {c |}{col 27}{res}{space 2} 3.203776{col 39}{space 2} .7301616{col 50}{space 1}    5.11{col 59}{space 3}0.000{col 67}{space 4} 2.049594{col 80}{space 3} 5.007911
+{txt}{space 9}Mahamaya Nagar   {c |}{col 27}{res}{space 2} 5.124131{col 39}{space 2} 1.293656{col 50}{space 1}    6.47{col 59}{space 3}0.000{col 67}{space 4} 3.124086{col 80}{space 3}  8.40461
+{txt}{space 16}Mathura   {c |}{col 27}{res}{space 2} 5.095612{col 39}{space 2} 1.269985{col 50}{space 1}    6.53{col 59}{space 3}0.000{col 67}{space 4} 3.126443{col 80}{space 3} 8.305049
+{txt}{space 19}Agra   {c |}{col 27}{res}{space 2} 5.069254{col 39}{space 2} 1.092964{col 50}{space 1}    7.53{col 59}{space 3}0.000{col 67}{space 4} 3.322152{col 80}{space 3} 7.735147
+{txt}{space 15}Firozabad  {c |}{col 27}{res}{space 2} 5.919593{col 39}{space 2} 1.407483{col 50}{space 1}    7.48{col 59}{space 3}0.000{col 67}{space 4} 3.714534{col 80}{space 3} 9.433641
+{txt}{space 16}Mainpuri  {c |}{col 27}{res}{space 2} 5.784575{col 39}{space 2}  1.48856{col 50}{space 1}    6.82{col 59}{space 3}0.000{col 67}{space 4} 3.493249{col 80}{space 3} 9.578852
+{txt}{space 18}Buduan  {c |}{col 27}{res}{space 2} 4.657783{col 39}{space 2}  1.02579{col 50}{space 1}    6.99{col 59}{space 3}0.000{col 67}{space 4} 3.024948{col 80}{space 3} 7.172004
+{txt}{space 16}Bareilly  {c |}{col 27}{res}{space 2} 1.878087{col 39}{space 2} .4123553{col 50}{space 1}    2.87{col 59}{space 3}0.004{col 67}{space 4} 1.221307{col 80}{space 3} 2.888063
+{txt}{space 16}Philbit   {c |}{col 27}{res}{space 2} 2.015563{col 39}{space 2}  .517072{col 50}{space 1}    2.73{col 59}{space 3}0.006{col 67}{space 4} 1.219072{col 80}{space 3} 3.332448
+{txt}{space 13}Shajahanpur  {c |}{col 27}{res}{space 2}  3.69287{col 39}{space 2} .8529333{col 50}{space 1}    5.66{col 59}{space 3}0.000{col 67}{space 4} 2.348356{col 80}{space 3} 5.807163
+{txt}{space 19}Kheri  {c |}{col 27}{res}{space 2} 9.157239{col 39}{space 2} 2.068996{col 50}{space 1}    9.80{col 59}{space 3}0.000{col 67}{space 4} 5.880892{col 80}{space 3} 14.25889
+{txt}{space 17}Sitapur  {c |}{col 27}{res}{space 2} 9.163748{col 39}{space 2} 2.066336{col 50}{space 1}    9.82{col 59}{space 3}0.000{col 67}{space 4} 5.890274{col 80}{space 3} 14.25643
+{txt}{space 18}Hardoi  {c |}{col 27}{res}{space 2} 6.785826{col 39}{space 2} 1.530337{col 50}{space 1}    8.49{col 59}{space 3}0.000{col 67}{space 4} 4.361542{col 80}{space 3}  10.5576
+{txt}{space 19}Unnao  {c |}{col 27}{res}{space 2} 5.887149{col 39}{space 2} 1.378009{col 50}{space 1}    7.57{col 59}{space 3}0.000{col 67}{space 4} 3.721034{col 80}{space 3} 9.314217
+{txt}{space 17}Lucknow  {c |}{col 27}{res}{space 2}    1.837{col 39}{space 2}  .471899{col 50}{space 1}    2.37{col 59}{space 3}0.018{col 67}{space 4} 1.110319{col 80}{space 3} 3.039279
+{txt}{space 14}Rae Bareli  {c |}{col 27}{res}{space 2} 4.579824{col 39}{space 2} 1.045324{col 50}{space 1}    6.67{col 59}{space 3}0.000{col 67}{space 4} 2.927966{col 80}{space 3} 7.163604
+{txt}{space 14}Farukkabad  {c |}{col 27}{res}{space 2} 3.028189{col 39}{space 2} .7839429{col 50}{space 1}    4.28{col 59}{space 3}0.000{col 67}{space 4}  1.82315{col 80}{space 3} 5.029717
+{txt}{space 16}Kannauj   {c |}{col 27}{res}{space 2} 2.530561{col 39}{space 2} .6658139{col 50}{space 1}    3.53{col 59}{space 3}0.000{col 67}{space 4} 1.510977{col 80}{space 3} 4.238144
+{txt}{space 17}Etawah   {c |}{col 27}{res}{space 2} 3.953088{col 39}{space 2} 1.019993{col 50}{space 1}    5.33{col 59}{space 3}0.000{col 67}{space 4} 2.383998{col 80}{space 3} 6.554916
+{txt}{space 17}Auraiya  {c |}{col 27}{res}{space 2} 3.822839{col 39}{space 2} 1.003562{col 50}{space 1}    5.11{col 59}{space 3}0.000{col 67}{space 4} 2.285234{col 80}{space 3} 6.395009
+{txt}{space 12}Kanpur Dehat  {c |}{col 27}{res}{space 2}  4.40561{col 39}{space 2} 1.165883{col 50}{space 1}    5.60{col 59}{space 3}0.000{col 67}{space 4} 2.622694{col 80}{space 3}  7.40056
+{txt}{space 12}Kanpur Nagar  {c |}{col 27}{res}{space 2} 2.486253{col 39}{space 2} .5771209{col 50}{space 1}    3.92{col 59}{space 3}0.000{col 67}{space 4} 1.577467{col 80}{space 3} 3.918594
+{txt}{space 18}Jalaun  {c |}{col 27}{res}{space 2} 2.656681{col 39}{space 2} .6921287{col 50}{space 1}    3.75{col 59}{space 3}0.000{col 67}{space 4} 1.594341{col 80}{space 3}  4.42688
+{txt}{space 18}Jhansi  {c |}{col 27}{res}{space 2} 5.283246{col 39}{space 2} 1.304841{col 50}{space 1}    6.74{col 59}{space 3}0.000{col 67}{space 4} 3.255919{col 80}{space 3} 8.572907
+{txt}{space 16}Lalitpur  {c |}{col 27}{res}{space 2} 8.068935{col 39}{space 2}  2.29762{col 50}{space 1}    7.33{col 59}{space 3}0.000{col 67}{space 4} 4.617826{col 80}{space 3} 14.09921
+{txt}{space 16}Hamirpur  {c |}{col 27}{res}{space 2} 1.627344{col 39}{space 2} .5104391{col 50}{space 1}    1.55{col 59}{space 3}0.121{col 67}{space 4} .8800113{col 80}{space 3} 3.009335
+{txt}{space 18}Mahoba  {c |}{col 27}{res}{space 2} 2.578281{col 39}{space 2} .7675637{col 50}{space 1}    3.18{col 59}{space 3}0.001{col 67}{space 4} 1.438549{col 80}{space 3} 4.621001
+{txt}{space 19}Banda  {c |}{col 27}{res}{space 2} 2.625199{col 39}{space 2} .6785482{col 50}{space 1}    3.73{col 59}{space 3}0.000{col 67}{space 4} 1.581786{col 80}{space 3} 4.356889
+{txt}{space 13}Chitrakoot   {c |}{col 27}{res}{space 2} 8.624713{col 39}{space 2} 2.568587{col 50}{space 1}    7.23{col 59}{space 3}0.000{col 67}{space 4} 4.811077{col 80}{space 3} 15.46134
+{txt}{space 17}Fatepur  {c |}{col 27}{res}{space 2} 2.836069{col 39}{space 2} .6596912{col 50}{space 1}    4.48{col 59}{space 3}0.000{col 67}{space 4} 1.797715{col 80}{space 3} 4.474173
+{txt}{space 14}Pratapgarh  {c |}{col 27}{res}{space 2} 13.45953{col 39}{space 2} 3.181893{col 50}{space 1}   11.00{col 59}{space 3}0.000{col 67}{space 4} 8.468417{col 80}{space 3} 21.39232
+{txt}{space 15}Kaushambi  {c |}{col 27}{res}{space 2} 5.952677{col 39}{space 2} 1.608409{col 50}{space 1}    6.60{col 59}{space 3}0.000{col 67}{space 4} 3.505244{col 80}{space 3} 10.10896
+{txt}{space 15}Allahabad  {c |}{col 27}{res}{space 2} 8.194364{col 39}{space 2} 1.747222{col 50}{space 1}    9.87{col 59}{space 3}0.000{col 67}{space 4} 5.395355{col 80}{space 3} 12.44545
+{txt}{space 14}Bara Banki  {c |}{col 27}{res}{space 2} 4.635116{col 39}{space 2} 1.043172{col 50}{space 1}    6.81{col 59}{space 3}0.000{col 67}{space 4} 2.981883{col 80}{space 3} 7.204946
+{txt}{space 16}Faizabad  {c |}{col 27}{res}{space 2} 8.269295{col 39}{space 2} 2.013813{col 50}{space 1}    8.67{col 59}{space 3}0.000{col 67}{space 4} 5.130696{col 80}{space 3} 13.32787
+{txt}{space 10}Ambedkar Nagar  {c |}{col 27}{res}{space 2} 7.347009{col 39}{space 2}  1.78623{col 50}{space 1}    8.20{col 59}{space 3}0.000{col 67}{space 4} 4.562087{col 80}{space 3} 11.83199
+{txt}{space 15}Sultanpur  {c |}{col 27}{res}{space 2} 9.156715{col 39}{space 2} 2.104476{col 50}{space 1}    9.64{col 59}{space 3}0.000{col 67}{space 4} 5.835918{col 80}{space 3} 14.36714
+{txt}{space 16}Bahraich  {c |}{col 27}{res}{space 2} 15.78976{col 39}{space 2} 3.757563{col 50}{space 1}   11.60{col 59}{space 3}0.000{col 67}{space 4} 9.904014{col 80}{space 3} 25.17329
+{txt}{space 15}Shrawasti  {c |}{col 27}{res}{space 2}  4.65246{col 39}{space 2} 1.366506{col 50}{space 1}    5.23{col 59}{space 3}0.000{col 67}{space 4} 2.616196{col 80}{space 3} 8.273607
+{txt}{space 14}Balrampur   {c |}{col 27}{res}{space 2}  15.2272{col 39}{space 2} 4.069953{col 50}{space 1}   10.19{col 59}{space 3}0.000{col 67}{space 4} 9.017979{col 80}{space 3} 25.71169
+{txt}{space 19}Gonda  {c |}{col 27}{res}{space 2} 12.23208{col 39}{space 2} 2.894005{col 50}{space 1}   10.58{col 59}{space 3}0.000{col 67}{space 4} 7.693316{col 80}{space 3} 19.44856
+{txt}{space 10}Siddharthnagar  {c |}{col 27}{res}{space 2} 19.60299{col 39}{space 2}  5.02002{col 50}{space 1}   11.62{col 59}{space 3}0.000{col 67}{space 4} 11.86705{col 80}{space 3} 32.38186
+{txt}{space 19}Basti  {c |}{col 27}{res}{space 2} 11.73692{col 39}{space 2} 2.867348{col 50}{space 1}   10.08{col 59}{space 3}0.000{col 67}{space 4} 7.271169{col 80}{space 3} 18.94541
+{txt}{space 8}Sant Kabir Nagar  {c |}{col 27}{res}{space 2} 7.104366{col 39}{space 2} 1.881958{col 50}{space 1}    7.40{col 59}{space 3}0.000{col 67}{space 4} 4.227082{col 80}{space 3} 11.94015
+{txt}{space 13}Maharajganj  {c |}{col 27}{res}{space 2} 6.607119{col 39}{space 2}  1.59144{col 50}{space 1}    7.84{col 59}{space 3}0.000{col 67}{space 4} 4.120835{col 80}{space 3} 10.59349
+{txt}{space 15}Gorakhpur  {c |}{col 27}{res}{space 2}  4.15045{col 39}{space 2} .9092457{col 50}{space 1}    6.50{col 59}{space 3}0.000{col 67}{space 4}   2.7016{col 80}{space 3} 6.376307
+{txt}{space 14}Kushinagar  {c |}{col 27}{res}{space 2} 3.260779{col 39}{space 2} .7485262{col 50}{space 1}    5.15{col 59}{space 3}0.000{col 67}{space 4} 2.079334{col 80}{space 3} 5.113502
+{txt}{space 18}Deoria  {c |}{col 27}{res}{space 2}  3.95168{col 39}{space 2} .9237073{col 50}{space 1}    5.88{col 59}{space 3}0.000{col 67}{space 4} 2.499269{col 80}{space 3} 6.248138
+{txt}{space 16}Azamgarh  {c |}{col 27}{res}{space 2} 5.408398{col 39}{space 2}  1.19502{col 50}{space 1}    7.64{col 59}{space 3}0.000{col 67}{space 4} 3.507441{col 80}{space 3} 8.339634
+{txt}{space 21}Mau  {c |}{col 27}{res}{space 2} 5.092169{col 39}{space 2} 1.283421{col 50}{space 1}    6.46{col 59}{space 3}0.000{col 67}{space 4} 3.107188{col 80}{space 3} 8.345225
+{txt}{space 18}Ballia  {c |}{col 27}{res}{space 2} 4.610026{col 39}{space 2} 1.037666{col 50}{space 1}    6.79{col 59}{space 3}0.000{col 67}{space 4} 2.965564{col 80}{space 3} 7.166373
+{txt}{space 16}Jaunpur   {c |}{col 27}{res}{space 2}  6.56606{col 39}{space 2} 1.449806{col 50}{space 1}    8.52{col 59}{space 3}0.000{col 67}{space 4} 4.259484{col 80}{space 3} 10.12168
+{txt}{space 16}Ghazipur  {c |}{col 27}{res}{space 2}  6.23526{col 39}{space 2} 1.424276{col 50}{space 1}    8.01{col 59}{space 3}0.000{col 67}{space 4} 3.984929{col 80}{space 3} 9.756376
+{txt}{space 14}Chandrauli  {c |}{col 27}{res}{space 2} 8.960396{col 39}{space 2} 2.308704{col 50}{space 1}    8.51{col 59}{space 3}0.000{col 67}{space 4} 5.407663{col 80}{space 3} 14.84721
+{txt}{space 16}Varanasi  {c |}{col 27}{res}{space 2} 1.720101{col 39}{space 2} .4009299{col 50}{space 1}    2.33{col 59}{space 3}0.020{col 67}{space 4}  1.08931{col 80}{space 3} 2.716166
+{txt}Sant Ravidas Nagar(Bh..)  {c |}{col 27}{res}{space 2} 5.599984{col 39}{space 2} 1.480273{col 50}{space 1}    6.52{col 59}{space 3}0.000{col 67}{space 4} 3.335679{col 80}{space 3} 9.401329
+{txt}{space 15}Mirzapur   {c |}{col 27}{res}{space 2} 7.156651{col 39}{space 2} 1.718126{col 50}{space 1}    8.20{col 59}{space 3}0.000{col 67}{space 4} 4.470524{col 80}{space 3} 11.45674
+{txt}{space 15}Sonbhadra  {c |}{col 27}{res}{space 2} 7.004349{col 39}{space 2} 1.950504{col 50}{space 1}    6.99{col 59}{space 3}0.000{col 67}{space 4} 4.058199{col 80}{space 3} 12.08933
+{txt}{space 19}Etah   {c |}{col 27}{res}{space 2} 6.699885{col 39}{space 2} 1.708821{col 50}{space 1}    7.46{col 59}{space 3}0.000{col 67}{space 4} 4.064119{col 80}{space 3} 11.04506
+{txt}{space 8}Kanshiram Nagar   {c |}{col 27}{res}{space 2} 6.006223{col 39}{space 2}  1.52989{col 50}{space 1}    7.04{col 59}{space 3}0.000{col 67}{space 4} 3.645739{col 80}{space 3} 9.895034
+{txt}{space 25} {c |}
+{space 20}_cons {c |}{col 27}{res}{space 2} .8272194{col 39}{space 2} .2336916{col 50}{space 1}   -0.67{col 59}{space 3}0.502{col 67}{space 4} .4755039{col 80}{space 3} 1.439088
+{txt}{hline 26}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: 2 failures and 0 successes completely determined.{p_end}
+
+{com}. 
+. estat gof , group(40)
+
+{txt}{title:{txt}Logistic{txt} model for Latrine_Rec, goodness-of-fit test}
+
+  (Table collapsed on quantiles of estimated probabilities)
+
+       number of observations = {res}    18851
+             {txt}number of groups = {res}       40
+     {txt}Hosmer-Lemeshow chi2({res}38{txt}) = {res}       42.00
+                  {txt}Prob > chi2 = {res}        0.3017
+{txt}
+{com}. 
+. estat classification
+
+{txt}Logistic model for Latrine_Rec
+
+{col 15}{hline 8} True {hline 8}
+Classified {c |}{col 22}D{col 35}~D  {c |}{col 46}Total
+{hline 11}{c +}{hline 26}{c +}{hline 11}
+{col 6}+{col 12}{c |} {res}     5777{col 28}     2008{txt}  {c |}  {res}     7785
+{txt}{col 6}-{col 12}{c |} {res}     1653{col 28}     9413{txt}  {c |}  {res}    11066
+{txt}{hline 11}{c +}{hline 26}{c +}{hline 11}
+   Total   {c |} {res}     7430{col 28}    11421{txt}  {c |}  {res}    18851
+
+{txt}Classified + if predicted Pr(D) >= .5
+True D defined as Latrine_Rec != 0
+{hline 50}
+Sensitivity                     Pr( +| D){res}   77.75%
+{txt}Specificity                     Pr( -|~D){res}   82.42%
+{txt}Positive predictive value       Pr( D| +){res}   74.21%
+{txt}Negative predictive value       Pr(~D| -){res}   85.06%
+{txt}{hline 50}
+False + rate for true ~D        Pr( +|~D){res}   17.58%
+{txt}False - rate for true D         Pr( -| D){res}   22.25%
+{txt}False + rate for classified +   Pr(~D| +){res}   25.79%
+{txt}False - rate for classified -   Pr( D| -){res}   14.94%
+{txt}{hline 50}
+Correctly classified                     {res}   80.58%
+{txt}{hline 50}
+
+{com}. 
+. **margins State_District Sector Rel_Recoded Social_Group MDW_recoded Year, dydx( HH_size)
+. 
+. **margins State_District Sector Rel_Recoded
+. 
+. test 1.Year =2.Year
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[Latrine_Rec]1b.Year - [Latrine_Rec]2.Year = 0{p_end}
+
+{txt}{col 12}chi2(  1) ={res}  120.42
+{txt}{col 10}Prob > chi2 =  {res}  0.0000
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/alihusain/Desktop/Econometrics/StataProject.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}12 Jun 2020, 16:26:56
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
